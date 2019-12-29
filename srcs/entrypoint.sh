@@ -1,14 +1,13 @@
-
-
-# MkCert
+# Generate auto SSL certificate with MkCert
 chmod +x mkcert
 ./mkcert localhost
 
-rm /etc/nginx/sites-enabled/defaut
 cp configs/nginx_autoindex.conf /etc/nginx/sites-enabled/
 
-/etc/init.d/php-fpm start
-
+# Starting services! 
+/etc/init.d/php7.3-fpm start
 service nginx start
 service mysql start
+
+# Infinite loop.. 
 tail -f /dev/null
