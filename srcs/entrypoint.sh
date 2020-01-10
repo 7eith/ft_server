@@ -1,8 +1,12 @@
 # Extract web srcs
 tar xvzf web.tar.gz
 
+# Chmod script
+chmod +x apply_autoindexing.sh
+
 # Generate auto SSL certificate with MkCert
 chmod +x mkcert
+./mkcert -install
 ./mkcert localhost
 
 rm -rf /etc/nginx/sites-enabled/default
